@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/test_frag"
+        android:name="com.ady.test.swipecard.HomeFrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/test_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_string" />
+
+            <Button
+                android:id="@+id/test_drawable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_drawable" />
+
+            <ImageView
+                android:id="@+id/test_img_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/test_img_1_desc" />
+
+            <Button
+                android:id="@+id/test_scheduler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_scheduler" />
+
+            <Button
+                android:id="@+id/test_transform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_transform" />
+
+            <ImageView
+                android:id="@+id/test_img_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/test_img_2_desc" />
+
+            <Button
+                android:id="@+id/test_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_radio_btn" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableEnd="@drawable/self_abc_btn_radio_material"
+                    android:drawablePadding="100dp"
+                    android:text="@string/male"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableEnd="@drawable/self_abc_btn_radio_material"
+                    android:drawablePadding="100dp"
+                    android:text="@string/female" />
+
+                <RadioButton
+                    android:id="@+id/both"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableEnd="@drawable/self_abc_btn_radio_material"
+                    android:drawablePadding="100dp"
+                    android:text="@string/both" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/test_spannable_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_spannable_string" />
+
+            <Button
+                android:id="@+id/test_custom_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_custom_view" />
+
+            <Button
+                android:id="@+id/test_date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_date_picker" />
+
+            <Button
+                android:id="@+id/test_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_gallery" />
+
+            <Button
+                android:id="@+id/test_bottom_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_bottom_sheet" />
+
+            <ImageView
+                android:id="@+id/test_gallery_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:minWidth="100dp" />
+
+            <com.ady.test.customedview.RoundView
+                android:id="@+id/corner_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_corner_img"
+                android:minHeight="50dp"
+                android:minWidth="50dp"
+                android:src="@drawable/drawer_banner" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+

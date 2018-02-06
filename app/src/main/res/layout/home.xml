@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:holder="HomeFrag">
+
+    <!--<v.VLinear_TwoChildBottomMeasureFirst-->
+    <!--android:id="@+id/content"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:clipChildren="false"-->
+    <!--android:clipToPadding="false"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingLeft="8dp"-->
+    <!--android:paddingRight="8dp"-->
+    <!--android:paddingTop="10dp"-->
+    <!--tools:flatten="true">-->
+
+    <com.ady.test.swipecard.HomeProfileCardStack
+        android:id="@+id/stack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="121dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="66dp"
+        android:clipChildren="false"
+        android:clipToPadding="false" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:flatten="true">
+
+        <ImageView
+            android:id="@+id/dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.5"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_main_choose_pass" />
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="40dp"
+            android:layout_weight="1.5"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_main_choose_like" />
+
+    </LinearLayout>
+    <!--</v.VLinear_TwoChildBottomMeasureFirst>-->
+
+</FrameLayout>

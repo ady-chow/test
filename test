@@ -1,0 +1,6 @@
+export ANDROID_HOME=/Users/zhouxinyuan/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+conceptions:
+所谓变换，就是将事件序列中的对象或整个序列进行加工处理，转换成不同的事件或事件序列

@@ -3,6 +3,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App"
@@ -22,5 +23,9 @@
         <activity android:name=".span.SpanActivity" />
         <activity android:name=".customedview.CustomActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
+        <activity android:name=".fresco.FrescoActivity" />
+        <activity android:name=".anim.AnimActivity" />
+        <activity android:name=".components.ActionBarActivity"
+            android:theme="@style/ActionBarTheme"/>
     </application>
 </manifest>

@@ -8,25 +8,31 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!--<style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">-->
-    <!--<item name="colorPrimary">@color/transparent</item>-->
-    <!--</style>-->
+    <style name="TestActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+    </style>
 
-    <style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+    <style name="TestActionBarTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+    <style name="ProfileShowActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
         <!-- 让actionbar漂浮 -->
         <item name="android:windowActionBarOverlay">true</item>
         <!-- 去掉ActionBar与Activity之间的蓝色横线 -->
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:actionBarStyle">@style/ProfileShowActionBarTheme</item>
-        <!--<item name="colorPrimary">@color/transparent</item>-->
         <item name="colorPrimaryDark">@color/transparent</item>
-        <!--<item name="colorAccent">@color/transparent</item>-->
     </style>
 
-    <style name="ProfileShowActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <style name="ActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
         <!-- 设置actionbar 背景色 透明 -->
         <item name="android:background">#00000000</item>
-        <item name="android:backgroundStacked">#346c36</item>
+        <item name="android:backgroundStacked">#00000000</item>
         <item name="android:backgroundSplit">#00000000</item>
     </style>
 

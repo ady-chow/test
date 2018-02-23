@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':animation-engine'
+project(':animation-engine').projectDir = new File('android-common/animation-engine')

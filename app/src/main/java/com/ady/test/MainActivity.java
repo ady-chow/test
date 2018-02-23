@@ -19,20 +19,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.DatePicker;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.ady.test.adapter.MyAdapter;
-import com.ady.test.anim.AnimActivity;
+import com.ady.test.anim.BoneAnimAct;
+import com.ady.test.anim.LottieAnimActivity;
 import com.ady.test.bottomsheet.BottomSheetActivity;
 import com.ady.test.bottomsheet.ItemListDialogFragment;
 import com.ady.test.components.ActionBarActivity;
 import com.ady.test.customedview.CustomActivity;
 import com.ady.test.fresco.FrescoActivity;
+import com.ady.test.radar.RadarAct;
 import com.ady.test.rx.RxJavaTester;
 import com.ady.test.span.SpanActivity;
-
-import java.util.ArrayList;
 
 /** Created by zhouxinyuan on 2018/1/15. */
 public class MainActivity extends FragmentActivity implements ItemListDialogFragment.Listener {
@@ -70,9 +68,16 @@ public class MainActivity extends FragmentActivity implements ItemListDialogFrag
             });
     findViewById(R.id.test_bottom_sheet).setOnClickListener(v -> testBottomSheet());
     findViewById(R.id.test_fresco).setOnClickListener(v -> testFresco());
-    findViewById(R.id.test_anim).setOnClickListener(v -> testAnim());
+    findViewById(R.id.test_anim_lottie).setOnClickListener(v -> testAnim());
     findViewById(R.id.test_actionbar).setOnClickListener(v -> testActionBar());
     //    testAdapter();
+    findViewById(R.id.test_anim_bone)
+        .setOnClickListener(v -> startActivity(new Intent(this, BoneAnimAct.class)));
+    start(R.id.test_radar, RadarAct.class);
+  }
+
+  private void start(int id, Class<?> cls) {
+    findViewById(id).setOnClickListener(v -> startActivity(new Intent(this, cls)));
   }
 
   private void testActionBar() {
@@ -80,7 +85,7 @@ public class MainActivity extends FragmentActivity implements ItemListDialogFrag
   }
 
   private void testAnim() {
-    startActivity(new Intent(this, AnimActivity.class));
+    startActivity(new Intent(this, LottieAnimActivity.class));
   }
 
   private void testFresco() {

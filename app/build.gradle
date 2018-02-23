@@ -34,4 +34,5 @@ dependencies {
     compile 'com.facebook.fresco:animated-webp:1.0.0'
     compile 'com.facebook.fresco:webpsupport:1.0.0'
     compile 'com.airbnb.android:lottie:2.5.0-rc1'
+    compile project(':animation-engine')
 }

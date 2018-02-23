@@ -20,16 +20,28 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/test_radar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_radar" />
+
+            <Button
                 android:id="@+id/test_actionbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/test_actionbar" />
 
             <Button
-                android:id="@+id/test_anim"
+                android:id="@+id/test_anim_lottie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test_anim" />
+                android:text="@string/test_anim_lottie" />
+
+            <Button
+                android:id="@+id/test_anim_bone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_anim_bone" />
 
             <Button
                 android:id="@+id/test_fresco"

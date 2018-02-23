@@ -24,8 +24,10 @@
         <activity android:name=".customedview.CustomActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".fresco.FrescoActivity" />
-        <activity android:name=".anim.AnimActivity" />
+        <activity android:name=".anim.LottieAnimActivity" />
+        <activity android:name=".anim.BoneAnimAct" />
+        <activity android:name=".radar.RadarAct" />
         <activity android:name=".components.ActionBarActivity"
-            android:theme="@style/ActionBarTheme"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 </manifest>

@@ -6,35 +6,22 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_main_radar">
-
-        <!--<com.ady.test.radar.RadarRipple-->
-        <!--android:id="@+id/ripple"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:src="@drawable/radar" />-->
-
-        <!--<ImageView-->
-        <!--android:id="@+id/image"-->
-        <!--android:layout_width="@dimen/radar_image_size"-->
-        <!--android:layout_height="@dimen/radar_image_size"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:src="@drawable/just_for_test" />-->
+        android:layout_height="wrap_content">
 
         <com.ady.test.radar.Radar
             android:id="@+id/radar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:minHeight="129dp"
-            android:minWidth="129dp" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_main_radar" />
 
         <ImageView
-            android:layout_width="129dp"
-            android:layout_height="129dp"
+            android:layout_width="@dimen/radar_image_size"
+            android:layout_height="@dimen/radar_image_size"
             android:layout_gravity="center"
-            android:background="@drawable/ic_main_radar_avatar_bg" />
+            android:padding="10dp"
+            android:src="@drawable/ic_main_radar_avatar_bg" />
 
     </FrameLayout>
 

@@ -1,35 +1,29 @@
 package com.ady.test.radar;
 
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.SystemClock;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Interpolator;
 
 import com.ady.test.R;
+import com.ady.test.swipecard.Metrics;
 
 /** Created by ady on 2018/2/23. */
-public class Radar extends View {
+public class Radar extends android.support.v7.widget.AppCompatImageView {
 
-  private static final int DURATION = 3000;
+  static final long DURATION = 1500;
   private static long START;
-  Paint paint = new Paint();
-  Bitmap oval = BitmapFactory.decodeResource(getResources(), R.drawable.ic_main_radar_avatar_oval);
-  AccelerateDecelerateInterpolator interpolator = new AccelerateDecelerateInterpolator();
-  ValueAnimator animator;
-  float centerX;
-  float centerY;
-  Rect src;
-  RectF dst;
+  private Paint fillPaint;
+  private Paint borderPaint;
+  private Interpolator interpolator;
+  private ValueAnimator animator;
+  private float centerX;
+  private float centerY;
+  private float startPosition;
 
   public Radar(Context context) {
     super(context);
@@ -42,21 +36,33 @@ public class Radar extends View {
   @Override
   protected void onFinishInflate() {
     super.onFinishInflate();
-    paint.setAntiAlias(true);
-    paint.setDither(false);
-    src = new Rect();
-    dst = new RectF();
+    int radarBg = getResources().getColor(R.color.radar_bg);
+    fillPaint = new Paint();
+    fillPaint.setAntiAlias(true);
+    fillPaint.setDither(false);
+    fillPaint.setColor(radarBg);
+    fillPaint.setAlpha(0x19);
+    borderPaint = new Paint();
+    borderPaint.setAntiAlias(true);
+    borderPaint.setDither(false);
+    borderPaint.setStrokeWidth(Metrics.dp(1));
+    borderPaint.setStyle(Paint.Style.STROKE);
+    borderPaint.setColor(radarBg);
+    borderPaint.setAlpha(0xa6);
+    interpolator = new AccelerateDecelerateInterpolator();
   }
 
-  public void start() {
+  public void start(long delay) {
     START = SystemClock.uptimeMillis();
     if (animator == null) {
-      animator = ObjectAnimator.ofFloat(0f, 1f).setDuration(DURATION);
+      animator = ValueAnimator.ofFloat(0f, 1f).setDuration(DURATION);
+      animator.setInterpolator(interpolator);
       animator.setRepeatCount(ValueAnimator.INFINITE);
       animator.addUpdateListener(
           animation -> {
             invalidate();
           });
+      animator.setStartDelay(delay);
       animator.start();
     }
   }
@@ -74,42 +80,30 @@ public class Radar extends View {
   }
 
   @Override
+  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    int profileImageSize =
+        getContext().getResources().getDimensionPixelSize(R.dimen.radar_image_size);
+    startPosition = profileImageSize * 0.95f;
+  }
+
+  @Override
   protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
     if (SystemClock.uptimeMillis() - START < DURATION) {
       float ratio = 1.0f * (SystemClock.uptimeMillis() - START) / DURATION;
       float speed = interpolator.getInterpolation(ratio);
-      int w = getMeasuredWidth();
-      int h = getMeasuredHeight();
       if (centerX == 0) {
-        centerX = getX() + w / 2;
-        centerY = getY() + h / 2;
+        centerX = getMeasuredWidth() / 2;
+        centerY = getMeasuredHeight() / 2;
       }
-      float radius = w * (1 + speed) / 2;
-      Log.d(
-          "ady",
-          "onDraw: ratio = "
-              + ratio
-              + " speed = "
-              + speed
-              + ", w = "
-              + w
-              + ", radius = "
-              + radius
-              + ", centerX = "
-              + centerX
-              + ", centerY = "
-              + centerY
-              + ", elapse = "
-              + (SystemClock.uptimeMillis() - START));
-      src.left = getLeft();
-      src.top = getTop();
-      src.bottom = getBottom();
-      src.right = getRight();
-      dst.left = centerX - radius;
-      dst.top = centerY - radius;
-      dst.right = centerX + radius;
-      dst.bottom = centerY + radius;
-      canvas.drawBitmap(oval, src, dst, paint);
+      float radius = (startPosition + (getMeasuredWidth() * 0.95f - startPosition) * speed) / 2;
+      if (ratio >= 0.65f) {
+        fillPaint.setAlpha((int) (fillPaint.getAlpha() * (1 - speed)));
+        borderPaint.setAlpha((int) (borderPaint.getAlpha() * (1 - speed)));
+      }
+      canvas.drawCircle(centerX, centerY, radius, fillPaint);
+      canvas.drawCircle(centerX, centerY, radius, borderPaint);
     } else {
       if (animator != null) {
         animator.cancel();

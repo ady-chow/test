@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 
 import com.ady.test.R;
 
+import java.time.Duration;
+
 /** Created by ady on 2018/2/23. */
 public class RadarAct extends Activity {
 
@@ -19,7 +21,12 @@ public class RadarAct extends Activity {
     //    ripple = findViewById(R.id.ripple);
     //    ripple.ripple();
     radar = findViewById(R.id.radar);
-    radar.start();
+    radar.start(0);
+    radar.postDelayed(
+        () -> {
+          radar.onStop();
+        },
+        9000);
   }
 
   @Override

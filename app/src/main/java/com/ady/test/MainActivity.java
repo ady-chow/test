@@ -25,12 +25,15 @@ import com.ady.test.anim.BoneAnimAct;
 import com.ady.test.anim.LottieAnimActivity;
 import com.ady.test.bottomsheet.BottomSheetActivity;
 import com.ady.test.bottomsheet.ItemListDialogFragment;
+import com.ady.test.butterknife.ButterknifeAct;
 import com.ady.test.components.ActionBarActivity;
 import com.ady.test.customedview.CustomActivity;
 import com.ady.test.fresco.FrescoActivity;
 import com.ady.test.radar.RadarAct;
 import com.ady.test.rx.RxJavaTester;
 import com.ady.test.span.SpanActivity;
+
+import butterknife.ButterKnife;
 
 /** Created by zhouxinyuan on 2018/1/15. */
 public class MainActivity extends FragmentActivity implements ItemListDialogFragment.Listener {
@@ -74,6 +77,7 @@ public class MainActivity extends FragmentActivity implements ItemListDialogFrag
     findViewById(R.id.test_anim_bone)
         .setOnClickListener(v -> startActivity(new Intent(this, BoneAnimAct.class)));
     start(R.id.test_radar, RadarAct.class);
+    start(R.id.test_butterknife, ButterknifeAct.class);
   }
 
   private void start(int id, Class<?> cls) {

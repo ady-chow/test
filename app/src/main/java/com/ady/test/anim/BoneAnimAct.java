@@ -5,30 +5,46 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.ady.test.R;
+import com.sunshine.engine.bone.StageView;
 import com.sunshine.engine.particle.SceneView;
+
+import static com.ady.test.anim.AnimHelper.ANIMATIONS;
+import static com.ady.test.anim.AnimHelper.LIKE;
+import static com.ady.test.anim.AnimHelper.PASS;
 
 /** Created by ady on 2018/2/22. */
 public class BoneAnimAct extends Activity {
-  SceneView pass;
+  StageView pass;
+  EditText percent;
+  Button play;
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.act_bone_anim);
+    percent = findViewById(R.id.percent);
+    play = findViewById(R.id.play);
     pass = findViewById(R.id.dislike);
-    pass.setOnClickListener(
+    play.setOnClickListener(
         v -> {
-          Log.d("ady", "onCreate: bone click");
+          try {
+            pass.play(ANIMATIONS.get(PASS));
+            pass.setPercent(Float.valueOf(percent.getText().toString()), 500);
+          } catch (Exception e) {
+            Log.e("ady", "onCreate: ", e);
+          }
         });
   }
 
   @Override
   protected void onResume() {
+    pass.play(ANIMATIONS.get(PASS));
+    pass.setPercent(0);
     super.onResume();
-    pass.setVisibility(View.VISIBLE);
-    pass.playByAsset("anim/pass/config.xml", "anim/pass/pic");
   }
 
   @Override

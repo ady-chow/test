@@ -35,4 +35,6 @@ dependencies {
     compile 'com.facebook.fresco:webpsupport:1.0.0'
     compile 'com.airbnb.android:lottie:2.5.0-rc1'
     compile project(':animation-engine')
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

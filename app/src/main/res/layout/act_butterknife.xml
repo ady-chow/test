@@ -4,21 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.sunshine.engine.bone.StageView
-        android:id="@+id/dislike"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
-
-    <EditText
-        android:id="@+id/percent"
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="input percent:" />
+        android:text="test btn 1" />
 
     <Button
-        android:id="@+id/play"
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="play" />
+        android:text="test btn 1" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test btn 1" />
 
 </LinearLayout>

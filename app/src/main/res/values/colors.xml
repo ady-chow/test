@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="transparent">#00000000</color>
     <color name="radar_bg">#00be70</color>
+    <color name="main">#00be70</color>
 </resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/scale_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scale title" />
+
+        <Button
+            android:id="@+id/translate_start_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translate start btn" />
+
+        <Button
+            android:id="@+id/translate_skip_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translate skip btn" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="46dp"
+        android:drawablePadding="18dp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="-8sp"
+        android:text="Awesome"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/start_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/keep_play"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginStart="75dp"
+        android:background="@drawable/bg_button_logout"
+        android:gravity="center_horizontal"
+        android:paddingBottom="19dp"
+        android:paddingTop="19dp"
+        android:text="Let\'s chat"
+        android:textColor="@color/android:white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/keep_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="keep playing"
+        android:textColor="@color/main"
+        android:textSize="18sp" />
+
+</LinearLayout>

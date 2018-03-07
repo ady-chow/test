@@ -29,10 +29,12 @@ public class BoneAnimAct extends Activity {
     percent = findViewById(R.id.percent);
     play = findViewById(R.id.play);
     pass = findViewById(R.id.dislike);
+    pass.play(ANIMATIONS.get(PASS));
+    pass.setPercent(0);
+    pass.autoStop(false);
     play.setOnClickListener(
         v -> {
           try {
-            pass.play(ANIMATIONS.get(PASS));
             pass.setPercent(Float.valueOf(percent.getText().toString()), 500);
           } catch (Exception e) {
             Log.e("ady", "onCreate: ", e);
@@ -42,8 +44,6 @@ public class BoneAnimAct extends Activity {
 
   @Override
   protected void onResume() {
-    pass.play(ANIMATIONS.get(PASS));
-    pass.setPercent(0);
     super.onResume();
   }
 

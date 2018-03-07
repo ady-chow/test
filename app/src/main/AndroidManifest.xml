@@ -28,7 +28,9 @@
         <activity android:name=".anim.BoneAnimAct" />
         <activity android:name=".radar.RadarAct" />
         <activity android:name=".butterknife.ButterknifeAct" />
-        <activity android:name=".components.ActionBarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".components.ActionBarActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".anim.MatchAnimAct" />
     </application>
 </manifest>

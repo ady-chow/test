@@ -1,11 +1,10 @@
-##TODO List
+#TODO List#
 <br>GlobalLifecycle: check app switch between foreground and background
 <br>Debug Menu: how every item works
 <br>Dexguard: why use the default file
 
 
-
-<br><br><br>
-##Long Term List
+<br><br>
+#Long Term List#
 <br> oschina open source android client
 

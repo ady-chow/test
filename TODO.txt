@@ -1,0 +1,1 @@
+GlobalLifecycle: check app switch between foreground and background
